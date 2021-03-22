@@ -12,8 +12,8 @@
    <right>
       <VBox spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="name" promptText="Name" />
-            <TextField fx:id="PreName" promptText="Vorname" />
+            <TextField fx:id="name" promptText="Vorname" />
+            <TextField fx:id="PreName" promptText="Name" />
             <TextField fx:id="street" layoutX="15.0" layoutY="104.0" promptText="Strasse" />
             <TextField fx:id="houseNumber" promptText="Hausnummer" />
             <TextField fx:id="plz" layoutX="15.0" layoutY="120.0" promptText="Postleizahl" />

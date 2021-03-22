@@ -1,0 +1,30 @@
+.label{
+    -fx-font-family: Calibri;
+    -fx-font-size: 17px;
+}
+.root{
+    -fx-background-color: #ffe5c4;
+}
+.list-view{
+    -fx-background-color: #fff4e6;
+    -fx-border-color: grey;
+}
+.list-cell:even{
+    -fx-background-color: #fff4e6;
+}
+.list-cell:odd{
+    -fx-background-color: #ffedd6 ;
+}
+.list-cell:filled:selected{
+    -fx-background-color: #ffd9ab;
+    -fx-text-fill: black;
+}
+.button{
+    -fx-font-family: Calibri
+}
+#deleteButton{
+    -fx-background-color: #d77070;
+}
+#saveButton{
+    -fx-background-color: #6aac6a;
+}
