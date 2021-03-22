@@ -16,4 +16,8 @@ public class Address {
         this.plz = plz;
         this.ort = ort;
     }
+
+    public String toString(){
+        return vorname + " " +nachname+"\n"+strasse +" "+hausnummer+"\n"+plz+" "+ort;
+    }
 }
