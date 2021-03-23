@@ -1,6 +1,5 @@
 package sample;
 
-import com.sun.deploy.util.StringUtils;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,9 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-
-import java.util.Locale;
 
 public class Controller extends AddressList{
 
@@ -43,6 +39,7 @@ public class Controller extends AddressList{
     }
 
     public void deleteData(){
+        list.setItems(addresses);
         int delete = list.getSelectionModel().getSelectedIndex();
         list.getItems().remove(delete);
     }
