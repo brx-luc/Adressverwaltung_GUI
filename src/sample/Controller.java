@@ -1,11 +1,17 @@
 package sample;
 
+import com.sun.deploy.util.StringUtils;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+
+import java.util.Locale;
 
 public class Controller extends AddressList{
 
@@ -17,9 +23,10 @@ public class Controller extends AddressList{
     public TextField place;
     public Button saveButton;
     public Button deleteButton;
-    public int delete;
+    public TextField filterText;
     ObservableList<Address> addresses = FXCollections.observableArrayList(adi);
     @FXML ListView<Address> list = new ListView<>(addresses);
+    FilteredList<Address> filteredAddresses = new FilteredList<>(addresses, s -> true);
 
 
     public void saveData(){
@@ -38,6 +45,17 @@ public class Controller extends AddressList{
     public void deleteData(){
         int delete = list.getSelectionModel().getSelectedIndex();
         list.getItems().remove(delete);
+    }
 
+    public void searchData(){
+        filterText.textProperty().addListener(observable -> {
+            String filter = filterText.getText();
+            if(filter == null || filter.length() == 0){
+                Platform.runLater(() -> filteredAddresses.setPredicate(s -> true));
+            }else{
+                Platform.runLater(() -> filteredAddresses.setPredicate(s ->s.toString().contains(filter)));
+            }
+        });
+        list.setItems(filteredAddresses);
     }
 }

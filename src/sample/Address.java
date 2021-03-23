@@ -20,4 +20,28 @@ public class Address {
     public String toString(){
         return vorname + " " +nachname+"\n"+strasse +" "+hausnummer+"\n"+plz+" "+ort;
     }
+
+    public String getVorname() {
+        return vorname;
+    }
+
+    public String getNachname() {
+        return nachname;
+    }
+
+    public String getStrasse() {
+        return strasse;
+    }
+
+    public String getHausnummer() {
+        return hausnummer;
+    }
+
+    public String getPlz() {
+        return plz;
+    }
+
+    public String getOrt() {
+        return ort;
+    }
 }
